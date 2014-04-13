@@ -1,0 +1,45 @@
+<?php
+/**
+ * @file
+ * Module file for eventdispatcher_example.
+ */
+
+/**
+ * @defgroup eventdispatcher_example Example: Event dispatcher
+ * @ingroup examples
+ * @{
+ * This example demonstrates how define and consume events.
+ *
+ */
+
+/**
+ * Implements hook_help().
+ *
+ * Through hook_help(), a module can make documentation available to the user
+ * for the module as a whole or for specific paths. Where the help appears
+ * depends on the $path specified.
+ *
+ * Help text will be displayed in the region designated for help text. Typically
+ * this is the 'Help' region which can be found at admin/structure/block.
+ *
+ * The help text in the first example below, will appear on the simple page at
+ * examples/page_example/simple.
+ *
+ * The second example text will be available on the admin help page (admin/help)
+ * in the list of help topics using the name of the module. To specify help in
+ * the admin section combine the path and the module name using '#' as in the
+ * example below.
+ *
+ * @see hook_help()
+ */
+function eventdispatcher_example_help($path, $arg) {
+  switch ($path) {
+    case 'examples/page_example/simple':
+      // Help text for the simple page registered for this path.
+      return t('...');
+
+    case 'admin/help#eventdispatcher_example':
+      // Help text for the admin section, using the module name in the path.
+      return t("Event dispatcher example");
+  }
+}

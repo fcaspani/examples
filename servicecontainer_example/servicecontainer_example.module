@@ -1,0 +1,55 @@
+<?php
+/**
+ * @file
+ * Module file for servicecontainer_example.
+ */
+
+/**
+ * @defgroup servicecontainer_example Example: Service container
+ * @ingroup examples
+ * @{
+ * This example demonstrates how use the service container (create and consume services,
+ * dependency injection, ...).
+ *
+ * @see page_example
+ */
+
+/**
+ * Implements hook_help().
+ *
+ * Through hook_help(), a module can make documentation available to the user
+ * for the module as a whole or for specific paths. Where the help appears
+ * depends on the $path specified.
+ *
+ * Help text will be displayed in the region designated for help text. Typically
+ * this is the 'Help' region which can be found at admin/structure/block.
+ *
+ * he help text in the first example below, will appear on the simple page at
+ * examples/servicecontainer_example/service.
+ *
+ * The second example text will be available on the admin help page (admin/help)
+ * in the list of help topics using the name of the module. To specify help in
+ * the admin section combine the path and the module name using '#' as in the
+ * example below.
+ *
+ * @see hook_help()
+ */
+function servicecontainer_example_help($path, $arg) {
+  switch ($path) {
+    case 'examples/servicecontainer_example/existing_service':
+      // Help text for the simple page registered for this path.
+      return t('This is help text for the service page.');
+
+    case 'admin/help#servicecontainer_example':
+      // Help text for the admin section, using the module name in the path.
+      $output = array(
+        '#markup' => t('<p>The Service container example module provides two pages, "existing service" and "...".</p><p>The <a href="@service_link">service page</a> just returns a ....</p>',
+          array(
+            '@service_link' => url('examples/servicecontainer_example/existing_service'),
+          )
+        ),
+      );
+
+      return render($output);
+  }
+}

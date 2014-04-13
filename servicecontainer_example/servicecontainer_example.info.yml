@@ -1,0 +1,5 @@
+name: Service container example
+type: module
+description: 'An example module showing how to access and use the service container.'
+package: Example modules
+core: 8.x

@@ -1,0 +1,5 @@
+name: Event dispatcher example
+type: module
+description: 'An example module showing how to define and consume events.'
+package: Example modules
+core: 8.x
