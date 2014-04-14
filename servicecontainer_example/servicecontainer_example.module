@@ -11,6 +11,16 @@
  * This example demonstrates how use the service container (create and consume services,
  * dependency injection, ...).
  *
+ * Examples:
+ *
+ * - consume service exposed by a static method in \Drupal
+ * - consume service exposed by \Drupal->get()
+ * - define a new service and consume it
+ * - define a new service which depends on other services
+ * - define a Controller which implements ContainerInjectionInterface (or extends ControllerBase)
+ * - define and use a tagged service
+ * - add a compiler pass
+ *
  * @see page_example
  */
 
