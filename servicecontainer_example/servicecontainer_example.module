@@ -16,10 +16,13 @@
  * - consume service exposed by a static method in \Drupal
  * - consume service exposed by \Drupal->get()
  * - define a new service and consume it
- * - define a new service which depends on other services
+ * - define a new service which depends on other services (syntax of *services.yml: @, @?, %...%)
  * - define a Controller which implements ContainerInjectionInterface (or extends ControllerBase)
- * - define and use a tagged service
- * - add a compiler pass
+ * - define and use a tagged service (with and without priority)
+ * - define and use a factory service
+ * - define and use a service with method injection (calls)
+ * - define and use a service with synthetic, synchronized, abstract and parent keys
+ * - add a compiler pass (set parameters, alter ContainerBuilder, ...)
  *
  * @see page_example
  */
@@ -46,10 +49,6 @@
  */
 function servicecontainer_example_help($path, $arg) {
   switch ($path) {
-    case 'examples/servicecontainer_example/existing_service':
-      // Help text for the simple page registered for this path.
-      return t('This is help text for the service page.');
-
     case 'admin/help#servicecontainer_example':
       // Help text for the admin section, using the module name in the path.
       $output = array(

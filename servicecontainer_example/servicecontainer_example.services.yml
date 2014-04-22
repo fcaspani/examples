@@ -1,2 +1,4 @@
 services:
+  servicecontainer.simple:
+    class: Drupal\servicecontainer_example\Service\SimpleService
   

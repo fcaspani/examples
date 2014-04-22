@@ -34,12 +34,7 @@
  */
 function eventdispatcher_example_help($path, $arg) {
   switch ($path) {
-    case 'examples/page_example/simple':
-      // Help text for the simple page registered for this path.
-      return t('...');
-
     case 'admin/help#eventdispatcher_example':
-      // Help text for the admin section, using the module name in the path.
       return t("Event dispatcher example");
   }
 }

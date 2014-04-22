@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Contains \Drupal\servicecontainer_example\Controller\ServiceContainerExampleController.
+ */
+
 namespace Drupal\servicecontainer_example\Controller;
 
 /**

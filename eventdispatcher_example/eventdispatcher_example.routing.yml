@@ -1,0 +1,14 @@
+eventdispatcher_example.description:
+  path: '/examples/eventdispatcher_example'
+  defaults:
+    _content: '\Drupal\eventdispatcher_example\Controller\EventDispatcherExampleController::description'
+    _title: 'Event dispatcher example'
+  requirements:
+    _access: 'TRUE'
+eventdispatcher_example.example1:
+  path: '/examples/eventdispatcher_example/example1'
+  defaults:
+    _content: '\Drupal\eventdispatcher_example\Controller\EventDispatcherExampleController::example1'
+    _title: 'Event dispatcher example'
+  requirements:
+    _access: 'TRUE'

@@ -1,4 +1,3 @@
 servicecontainer_exmple.existing_service:
   title: 'Service container example'
-  description: '...'
   route_name: servicecontainer_example.existing_service

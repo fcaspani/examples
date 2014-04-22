@@ -1,6 +1,7 @@
 servicecontainer_example.existing_service:
-  path: 'examples/servicecontainer_example/existing_service'
+  path: '/examples/servicecontainer_example/existing_service'
   defaults:
     _content: '\Drupal\servicecontainer_example\Controller\ServiceContainerExampleController::existingService'
+    _title: 'Service container example'
   requirements:
     _access: 'TRUE'

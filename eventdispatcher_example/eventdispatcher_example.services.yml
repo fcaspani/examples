@@ -1,0 +1,5 @@
+services:
+  eventdispatcher_example.profilerListener:
+    class: Drupal\eventdispatcher_example\EventListener\EventDispatcherEventListener
+    tags:
+      - { name: event_subscriber }

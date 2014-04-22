@@ -13,6 +13,15 @@
  * It's important to understand how the menu system works in order to
  * implement your own pages. See the Menu Example module for some insight.
  *
+ * Examples:
+ *
+ * - simple routing
+ * - routing with arguments
+ * - alter route defined elsewhere
+ * - parameter converter (Drupal\Core\ParamConverter\ParamConverterManager, Drupal\Core\ParamConverter\EntityConverter, https://drupal.org/node/2122223)
+ * - DynamicRouter (Symfony\Cmf\Component\Routing\DynamicRouter) and Dynamic routes (https://drupal.org/node/2122201)
+ * - route enhancers (Drupal\Core\DependencyInjection\Compiler\RegisterRouteEnhancersPass)
+ *
  * @see menu_example
  */
 
