@@ -1,4 +1,7 @@
 services:
+# Services tagged with "event_subscriber" tag are registered as
+# event listeners. Service class must implements EventSubscriberInterface
+# and returns listeners in getSubscribedEvents method.
   eventdispatcher_example.profilerListener:
     class: Drupal\eventdispatcher_example\EventListener\EventDispatcherEventListener
     tags:

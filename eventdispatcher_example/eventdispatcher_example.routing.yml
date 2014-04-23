@@ -12,3 +12,10 @@ eventdispatcher_example.example1:
     _title: 'Event dispatcher example'
   requirements:
     _access: 'TRUE'
+eventdispatcher_example.example2:
+  path: '/examples/eventdispatcher_example/example2'
+  defaults:
+    _form: '\Drupal\eventdispatcher_example\Form\EventForm'
+    _title: 'Event dispatcher example'
+  requirements:
+    _access: 'TRUE'

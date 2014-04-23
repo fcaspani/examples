@@ -12,6 +12,8 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
+use Drupal\eventdispatcher_example\Event\ExampleEvent;
+use Drupal\eventdispatcher_example\Event\ExampleEvents;
 
 /**
  * Class EventDispatcherEventListener
@@ -25,7 +27,7 @@ class EventDispatcherEventListener implements EventSubscriberInterface {
    */
   public function onKernelRequest(GetResponseEvent $event) {
     $client_ip = $event->getRequest()->getClientIp();
-    //watchdog('eventdispatcher_example', t('Client ip @ip', array('@ip' => $client_ip)));
+    watchdog('eventdispatcher_example', t('Client ip @ip', array('@ip' => $client_ip)));
   }
 
   /**
@@ -39,12 +41,23 @@ class EventDispatcherEventListener implements EventSubscriberInterface {
   }
 
   /**
+   * @param ExampleEvent $event
+   */
+  public function onExampleEvent(ExampleEvent $event) {
+    $data = $event->getData();
+    watchdog('eventdispatcher_example', print_r($data, TRUE));
+  }
+
+  /**
    * {@inheritdoc}
    */
   public static function getSubscribedEvents() {
     return array(
+      // Symfony defined events
       KernelEvents::RESPONSE => array('onKernelResponse', -100),
       KernelEvents::REQUEST => array('onKernelRequest', -100),
+      // Example module defined events (defined in ExampleEvents and dispatched in EventForm)
+      ExampleEvents::EXAMPLE => array('onExampleEvent', 0),
     );
   }
 }
