@@ -14,7 +14,7 @@
  * Examples:
  *
  * - consume service exposed by a static method in \Drupal
- * - consume service exposed by \Drupal->get()
+ * - consume service exposed by \Drupal->service()
  * - define a new service and consume it
  * - define a new service which depends on other services
  * - define a Controller which implements ContainerInjectionInterface (or extends ControllerBase)

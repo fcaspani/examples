@@ -72,7 +72,7 @@ class ServiceContainerExampleController {
      *
      */
 
-    $newsletter = \Drupal::service('newsletter');
+    $newsletter = \Drupal::service('newsletter'); \Drupal::get('');
 
     // Set default values: recipients, subject and message.
 
