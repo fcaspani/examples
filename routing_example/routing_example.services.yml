@@ -1,0 +1,5 @@
+services:
+  access_check.routing_example_access:
+    class: Drupal\routing_example\Access\RoutingExampleAccessCheck
+    tags:
+      - { name: access_check }

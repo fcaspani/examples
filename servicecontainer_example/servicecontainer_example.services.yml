@@ -1,4 +1,6 @@
 services:
-  servicecontainer.simple:
-    class: Drupal\servicecontainer_example\Service\SimpleService
-  
+  newsletter:
+    class: Drupal\servicecontainer_example\Classes\Newsletter
+  session_plus:
+    class: Drupal\servicecontainer_example\Classes\SessionPlus
+    arguments: ['@session_manager']

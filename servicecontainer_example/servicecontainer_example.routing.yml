@@ -1,7 +1,34 @@
 servicecontainer_example.existing_service:
-  path: '/examples/servicecontainer_example/existing_service'
+  path: 'examples/servicecontainer_example/existing_service'
   defaults:
     _content: '\Drupal\servicecontainer_example\Controller\ServiceContainerExampleController::existingService'
-    _title: 'Service container example'
   requirements:
     _access: 'TRUE'
+
+servicecontainer_example.existing_service_get:
+  path: 'examples/servicecontainer_example/existing_service_get'
+  defaults:
+    _content: '\Drupal\servicecontainer_example\Controller\ServiceContainerExampleController::existingServiceGet'
+  requirements:
+    _access: 'TRUE'
+
+servicecontainer_example.consume_custom_service:
+  path: 'examples/servicecontainer_example/consume_custom_service'
+  defaults:
+    _content: '\Drupal\servicecontainer_example\Controller\ServiceContainerExampleController::consumeCustomService'
+  requirements:
+    _access: 'TRUE'
+
+servicecontainer_example.consume_custom_service_with_depends:
+  path: 'examples/servicecontainer_example/consume_custom_service_with_depends'
+  defaults:
+    _content: '\Drupal\servicecontainer_example\Controller\ServiceContainerExampleController::consumeCustomServiceWithDepends'
+  requirements:
+    _access: 'TRUE'
+
+
+
+
+
+
+

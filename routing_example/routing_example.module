@@ -1,0 +1,31 @@
+<?php
+/**
+ * @file
+ * Module file for routing_example.
+ */
+
+/**
+ * @defgroup routing_example Example: Routing
+ * @ingroup examples
+ * @{
+ * This example demonstrates how define routing.
+ *
+ *
+ * Examples:
+ *
+ * - simple route
+ * - route to form
+ * - _controller vs _content
+ * - requirements
+ * -- custom access check
+ * -- method
+ * - alter route defined elsewhere
+ * - parameter converter (Drupal\Core\ParamConverter\ParamConverterManager, Drupal\Core\ParamConverter\EntityConverter, https://drupal.org/node/2122223)
+ * - DynamicRouter (Symfony\Cmf\Component\Routing\DynamicRouter) and Dynamic routes (https://drupal.org/node/2122201)
+ * - route enhancers (Drupal\Core\DependencyInjection\Compiler\RegisterRouteEnhancersPass)
+ *
+ */
+
+/**
+ * @} End of "defgroup routing_example".
+ */

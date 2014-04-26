@@ -1,0 +1,41 @@
+routing_example.description:
+  path: 'examples/routing_example'
+  defaults:
+    _content: '\Drupal\routing_example\Controller\RoutingExampleController::description'
+    _title: 'Routing example'
+  requirements:
+    _access: 'TRUE'
+routing_example.simple:
+  path: 'examples/routing_example/simple'
+  defaults:
+    _content: '\Drupal\routing_example\Controller\RoutingExampleController::simple'
+    _title: 'Routing example - simple'
+  requirements:
+    _access: 'TRUE'
+routing_example.form:
+  path: 'examples/routing_example/form'
+  defaults:
+    _form: '\Drupal\routing_example\Form\RoutingExampleSimpleForm'
+    _title: 'Routing example - form'
+  requirements:
+    _access: 'TRUE'
+routing_example.controller:
+  path: 'examples/routing_example/controller'
+  defaults:
+    _controller: '\Drupal\routing_example\Controller\RoutingExampleController::controller'
+  requirements:
+    _access: 'TRUE'
+routing_example.access:
+  path: 'examples/routing_example/access'
+  defaults:
+    _content: '\Drupal\routing_example\Controller\RoutingExampleController::access'
+    _title: 'Routing example - access'
+  requirements:
+    _access_routing_example_access: 'TRUE'
+routing_example.only_post:
+  path: 'examples/routing_example/only_post'
+  defaults:
+    _controller: '\Drupal\routing_example\Controller\RoutingExampleController::only_post'
+  requirements:
+    _access: 'TRUE'
+    _method: 'POST'

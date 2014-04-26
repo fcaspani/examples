@@ -16,13 +16,10 @@
  * - consume service exposed by a static method in \Drupal
  * - consume service exposed by \Drupal->get()
  * - define a new service and consume it
- * - define a new service which depends on other services (syntax of *services.yml: @, @?, %...%)
+ * - define a new service which depends on other services
  * - define a Controller which implements ContainerInjectionInterface (or extends ControllerBase)
- * - define and use a tagged service (with and without priority)
- * - define and use a factory service
- * - define and use a service with method injection (calls)
- * - define and use a service with synthetic, synchronized, abstract and parent keys
- * - add a compiler pass (set parameters, alter ContainerBuilder, ...)
+ * - add a compiler pass
+ * - define and use a tagged service (simple with TaggedHandlersPass and more complex with manual discovery)
  *
  * @see page_example
  */
@@ -49,12 +46,34 @@
  */
 function servicecontainer_example_help($path, $arg) {
   switch ($path) {
+    case 'examples/servicecontainer_example/existing_service':
+      // Help text for the simple page registered for this path.
+      return t('This is help text for the service page.');
+
     case 'admin/help#servicecontainer_example':
       // Help text for the admin section, using the module name in the path.
       $output = array(
-        '#markup' => t('<p>The Service container example module provides two pages, "existing service" and "...".</p><p>The <a href="@service_link">service page</a> just returns a ....</p>',
+        '#markup' => t('<p>The Service container example module provides some example about how use the <b>ServiceContainer.</b><br>
+                        This component load manage services in our website / webapp. We can create our custom service without think and looking depends.<br>
+                        ServiceContainer find for us if exist depends and instance the object of the classes that we have need.<br>
+                        The list show some example about some uses of the ServiceContainer:
+        </p><p>
+        <ol>
+
+        <li>How consume a service exposed by a <b>static method in \Drupal</b>, click <a href="@service_link"> here</a>.</li>
+        <li>How consume a service by <b>method service(String $id) </b>, click <a href="@get_service">here</a>.</li>
+        <li>How define a <b>new service and consume it</b>, click <a href="@new_service"> here</a> .</li>
+        <li>How define a <b>new service with depends and consume it</b>, click <a href="@depends_service"> here</a> .</li>
+        </ol>
+        </p>
+
+        ',
           array(
             '@service_link' => url('examples/servicecontainer_example/existing_service'),
+            '@get_service' => url('examples/servicecontainer_example/existing_service_get'),
+            '@new_service' => url('examples/servicecontainer_example/consume_custom_service'),
+            '@depends_service' => url('examples/servicecontainer_example/consume_custom_service_with_depends'),
+
           )
         ),
       );
