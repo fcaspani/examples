@@ -49,6 +49,6 @@ servicecontainer_example.consume_custom_service_with_depends:
   path: 'examples/servicecontainer_example/consume_custom_service_with_depends'
   defaults:
     _content: '\Drupal\servicecontainer_example\Controller\ServiceContainerExampleController::consumeCustomServiceWithDepends'
-    _title: 'Custom service vith depends'
+    _title: 'Custom service with depends'
   requirements:
     _access: 'TRUE'

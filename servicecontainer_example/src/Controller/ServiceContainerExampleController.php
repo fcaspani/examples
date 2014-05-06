@@ -33,7 +33,7 @@ class ServiceContainerExampleController extends ControllerBase {
         'route_name' => 'servicecontainer_example.consume_custom_service',
       ),
       'consume_custom_service_with_depends' => array(
-        'title' => $this->t('Custom service vith depends'),
+        'title' => $this->t('Custom service with depends'),
         'route_name' => 'servicecontainer_example.consume_custom_service_with_depends',
       ),
     );
