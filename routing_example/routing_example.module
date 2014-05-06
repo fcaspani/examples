@@ -8,21 +8,32 @@
  * @defgroup routing_example Example: Routing
  * @ingroup examples
  * @{
- * This example demonstrates how define routing.
+ * This example demonstrates how define routing (https://drupal.org/node/2092643).
  *
  *
  * Examples:
  *
- * - simple route
- * - route to form
- * - _controller vs _content
- * - requirements
- * -- custom access check
- * -- method
- * - alter route defined elsewhere
- * - parameter converter (Drupal\Core\ParamConverter\ParamConverterManager, Drupal\Core\ParamConverter\EntityConverter, https://drupal.org/node/2122223)
- * - DynamicRouter (Symfony\Cmf\Component\Routing\DynamicRouter) and Dynamic routes (https://drupal.org/node/2122201)
- * - route enhancers (Drupal\Core\DependencyInjection\Compiler\RegisterRouteEnhancersPass)
+ * 1) simple route
+ * 2) route with parameters
+ * 2.1) parameters
+ * 2.2) default parameters
+ * 2.3) access Request object
+ * 2.4) parameter converter (Drupal\Core\ParamConverter\ParamConverterManager, Drupal\Core\ParamConverter\EntityConverter, https://drupal.org/node/2122223)
+ * 3) passing fixed arguments to controllers
+ * 4) route to form
+ * 5) _controller vs _content (for non-HTML request)
+ * 6) access requirements (https://drupal.org/node/2122195)
+ * 6.1) method (GET, POST)
+ * 6.2) custom access check
+ * 7) defaults
+ * 7.1) _title_callback
+ * 8) options
+ * 9) get link to route
+ * 9.1) UrlGenerator (Drupal\Core\Routing\UrlGenerator) - LinkGenerator (Drupal\Core\Utility\LinkGenerator)
+ * 9.2) theme_links
+ * 10) alter route
+ * 11) DynamicRouter (Symfony\Cmf\Component\Routing\DynamicRouter) and Dynamic routes (https://drupal.org/node/2122201)
+ * 12) route enhancers (Drupal\Core\DependencyInjection\Compiler\RegisterRouteEnhancersPass)
  *
  */
 

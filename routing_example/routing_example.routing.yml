@@ -1,3 +1,6 @@
+#
+#
+#
 routing_example.description:
   path: 'examples/routing_example'
   defaults:
@@ -5,6 +8,9 @@ routing_example.description:
     _title: 'Routing example'
   requirements:
     _access: 'TRUE'
+#
+#
+#
 routing_example.simple:
   path: 'examples/routing_example/simple'
   defaults:
@@ -12,6 +18,40 @@ routing_example.simple:
     _title: 'Routing example - simple'
   requirements:
     _access: 'TRUE'
+#
+#
+#
+routing_example.request:
+  path: 'examples/routing_example/request/{param}'
+  defaults:
+    _content: '\Drupal\routing_example\Controller\RoutingExampleController::request'
+    _title: 'Routing example - request'
+  requirements:
+    _access: 'TRUE'
+#
+#
+#
+routing_example.request_converter:
+  path: 'examples/routing_example/converter/{model}'
+  defaults:
+    _content: '\Drupal\routing_example\Controller\RoutingExampleController::converter'
+    _title: 'Routing example - converter'
+  requirements:
+    _access: 'TRUE'
+#
+#
+#
+routing_example.fixed_arguments:
+  path: 'examples/routing_example/fixed_arguments'
+  defaults:
+    _content: '\Drupal\routing_example\Controller\RoutingExampleController::fixed_arguments'
+    _title: 'Routing example - fixed arguments'
+    custom_arg: 12
+  requirements:
+    _access: 'TRUE'
+#
+#
+#
 routing_example.form:
   path: 'examples/routing_example/form'
   defaults:
@@ -19,19 +59,18 @@ routing_example.form:
     _title: 'Routing example - form'
   requirements:
     _access: 'TRUE'
+#
+#
+#
 routing_example.controller:
   path: 'examples/routing_example/controller'
   defaults:
     _controller: '\Drupal\routing_example\Controller\RoutingExampleController::controller'
   requirements:
     _access: 'TRUE'
-routing_example.access:
-  path: 'examples/routing_example/access'
-  defaults:
-    _content: '\Drupal\routing_example\Controller\RoutingExampleController::access'
-    _title: 'Routing example - access'
-  requirements:
-    _access_routing_example_access: 'TRUE'
+#
+#
+#
 routing_example.only_post:
   path: 'examples/routing_example/only_post'
   defaults:
@@ -39,3 +78,48 @@ routing_example.only_post:
   requirements:
     _access: 'TRUE'
     _method: 'POST'
+  options:
+      # Ensure *both* requirements below are checked to grant access to the route.
+      # Use ANY to grant access if just one requirement return ALLOW.
+      # Default value is ALL.
+      _access_mode: 'ALL'
+#
+#
+#
+routing_example.access:
+  path: 'examples/routing_example/access'
+  defaults:
+    _content: '\Drupal\routing_example\Controller\RoutingExampleController::access'
+    _title: 'Routing example - access'
+  requirements:
+    _access_routing_example_access: 'TRUE'
+#
+#
+#
+routing_example.defaults:
+  path: 'examples/routing_example/defaults'
+  defaults:
+    _content: '\Drupal\routing_example\Controller\RoutingExampleController::defaults'
+    _title_callback: '\Drupal\routing_example\Controller\RoutingExampleController::defaultsTitleCallback'
+  requirements:
+    _access: 'TRUE'
+#
+#
+#
+routing_example.links:
+  path: 'examples/routing_example/links'
+  defaults:
+    _content: '\Drupal\routing_example\Controller\RoutingExampleController::links'
+    _title: 'Routing example - links'
+  requirements:
+    _access: 'TRUE'
+#
+#
+#
+routing_example.alter:
+  path: 'examples/routing_example/alter'
+  defaults:
+    _content: '\Drupal\routing_example\Controller\RoutingExampleController::alter'
+    _title: 'Routing example - alter'
+  requirements:
+    _access: 'TRUE'

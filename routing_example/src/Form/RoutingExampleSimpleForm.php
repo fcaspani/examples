@@ -31,6 +31,7 @@ class RoutingExampleSimpleForm extends FormBase {
     $form['text'] = array(
       '#type' => 'textfield',
       '#title' => $this->t('Text'),
+      '#required' => TRUE,
     );
 
     $form['submit'] = array(
@@ -50,6 +51,7 @@ class RoutingExampleSimpleForm extends FormBase {
    *   An associative array containing the current state of the form.
    */
   public function submitForm(array &$form, array &$form_state) {
-    //
+    $values = $form_state['values'];
+    drupal_set_message($values['text']);
   }
 }

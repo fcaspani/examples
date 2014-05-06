@@ -3,3 +3,11 @@ services:
     class: Drupal\routing_example\Access\RoutingExampleAccessCheck
     tags:
       - { name: access_check }
+  exmaple.route_subscriber:
+    class: Drupal\routing_example\Routing\RoutingExampleRouteSubscriber
+    tags:
+      - { name: event_subscriber }
+  paramconverter.example:
+    class: Drupal\routing_example\Routing\RoutingExampleParamConverter
+    tags:
+      - { name: paramconverter }

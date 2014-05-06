@@ -39,6 +39,10 @@ class RoutingExampleAccessCheck implements AccessCheckInterface {
    */
   public function access(Route $route, Request $request, AccountInterface $account) {
     if ($account->isAnonymous()) {
+      // returning self::DENY here means that this access check has denied access, if
+      // exists an other access check that returns self:ALLOW and _access_mode
+      // in routing_example.routing.yml for this route was set to ANY, access to this route
+      // will be granted. To explicit block access to this route return self::KILL.
       return self::DENY;
     }
     else {
