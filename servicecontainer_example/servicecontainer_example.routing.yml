@@ -1,34 +1,54 @@
+#
+#
+#
+servicecontainer_example.description:
+  path: 'examples/servicecontainer_example'
+  defaults:
+    _content: '\Drupal\servicecontainer_example\Controller\ServiceContainerExampleController::description'
+    _title: 'Service container example'
+  requirements:
+    _access: 'TRUE'
+
+#
+#
+#
 servicecontainer_example.existing_service:
   path: 'examples/servicecontainer_example/existing_service'
   defaults:
     _content: '\Drupal\servicecontainer_example\Controller\ServiceContainerExampleController::existingService'
+    _title: 'Existing service'
   requirements:
     _access: 'TRUE'
 
+#
+#
+#
 servicecontainer_example.existing_service_get:
   path: 'examples/servicecontainer_example/existing_service_get'
   defaults:
     _content: '\Drupal\servicecontainer_example\Controller\ServiceContainerExampleController::existingServiceGet'
+    _title: 'Existing service get'
   requirements:
     _access: 'TRUE'
 
+#
+#
+#
 servicecontainer_example.consume_custom_service:
   path: 'examples/servicecontainer_example/consume_custom_service'
   defaults:
     _content: '\Drupal\servicecontainer_example\Controller\ServiceContainerExampleController::consumeCustomService'
+    _title: 'Custom service'
   requirements:
     _access: 'TRUE'
 
+#
+#
+#
 servicecontainer_example.consume_custom_service_with_depends:
   path: 'examples/servicecontainer_example/consume_custom_service_with_depends'
   defaults:
     _content: '\Drupal\servicecontainer_example\Controller\ServiceContainerExampleController::consumeCustomServiceWithDepends'
+    _title: 'Custom service vith depends'
   requirements:
     _access: 'TRUE'
-
-
-
-
-
-
-

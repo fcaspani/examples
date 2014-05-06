@@ -2,11 +2,49 @@
 
 namespace Drupal\servicecontainer_example\Controller;
 
+use Drupal\Core\Controller\ControllerBase;
+
 /**
  * Class ServiceContainerExampleController
  * @package Drupal\servicecontainer_example\Controller
  */
-class ServiceContainerExampleController {
+class ServiceContainerExampleController extends ControllerBase {
+
+  /**
+   * @return array
+   */
+  public function description() {
+    $build = array();
+    $build['help'] = array(
+      '#markup' => $this->t('Service container examples:'),
+    );
+
+    $links = array(
+      'existing_service' => array(
+        'title' => $this->t('Existing service'),
+        'route_name' => 'servicecontainer_example.existing_service',
+      ),
+      'existing_service_get' => array(
+        'title' => $this->t('Existing service get'),
+        'route_name' => 'servicecontainer_example.existing_service_get',
+      ),
+      'consume_custom_service' => array(
+        'title' => $this->t('Custom service'),
+        'route_name' => 'servicecontainer_example.consume_custom_service',
+      ),
+      'consume_custom_service_with_depends' => array(
+        'title' => $this->t('Custom service vith depends'),
+        'route_name' => 'servicecontainer_example.consume_custom_service_with_depends',
+      ),
+    );
+
+    $build['links'] = array(
+      '#theme' => 'links',
+      '#links' => $links,
+    );
+
+    return $build;
+  }
 
   /**
    * Consume service exposed by a static method in \Drupal
@@ -72,7 +110,7 @@ class ServiceContainerExampleController {
      *
      */
 
-    $newsletter = \Drupal::service('newsletter'); \Drupal::get('');
+    $newsletter = \Drupal::service('newsletter');
 
     // Set default values: recipients, subject and message.
 
